@@ -19,6 +19,23 @@ public class LeaderboardAlgorithms {
      */
     public static void sortByScoreDescending(ArrayList<ScoreEntry> list) {
         // TODO
+    	for (int i = 1; i < list.size(); i++) {
+    		int j = i;
+    		//INsert numbers[i] into sorted part
+    		//stopping once numbers[i] in correct spot
+    		//while (j > 0 && numbers[j] < numbers[j-1]{
+    		while (j > 0 && list.get(j).getScore() > list.get(j-1).getScore()) {
+    			
+    			//Swap numbers[j] and numbers [j-1]
+    			//int temp = numbers[j];
+    			ScoreEntry temp = list.get(j);
+    			//numbers[j] = numbers[j - 1];
+    			list.set(j, list.get(j-1));
+    			//numbers[j - 1] = temp;
+    			j--;
+    			
+    		}
+    	}
     }
 
     /**
@@ -29,6 +46,24 @@ public class LeaderboardAlgorithms {
      */
     public static void sortByUsernameAscending(ArrayList<ScoreEntry> list) {
         // TODO
+    	//for (int i = 1; i < numbers.length; i++){
+    	for (int i = 1; i < list.size(); i++) {
+    		int j = 1;
+    	//Insert numbers[i] into sorted part
+    	// stopping once numbers[i] in correct position 
+    	//while (j > 0  && numbers[j] < numbers[j - 1]){
+    		while (j > 0 && list.get(j).getScore() > list.get(j - 1).getScore()) {
+    		
+    			//Swap numbers[j] and numbers [j-1]
+    			//int temp = numbers[j];
+    			ScoreEntry temp = list.get(j);
+    			//numbers[j] = numbers[j - 1];
+    			list.set(j, list.get(j-1));
+    			//numbers[j-1] = temp;
+    			list.set(j-1,  temp);
+    			j--;
+    		}
+    	}
     }
 
     /**
